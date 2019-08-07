@@ -15,10 +15,10 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res) {
-  res.send('test test');
+  res.send('Blocklords!');
 })
 
-app.get('/api/token/:token_id', function(req, res) {
+app.get('/api/hero/:token_id', function(req, res) {
   const tokenId = parseInt(req.params.token_id).toString()
   const person = db[tokenId]
   const bdayParts = person.birthday.split(' ')
